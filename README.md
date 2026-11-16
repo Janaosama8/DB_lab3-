@@ -4,76 +4,65 @@
 - Takwa Abdelrahman – 2304052
 
 
-In this part, we continued our website from Lab 2 using Python, Flask, and MySQL. We created a library website to manage books and authors.
+A Library Management System developed using Python, Flask, and MySQL. The project allows users to manage books, authors, and library information through a web application.
 
-The database contains two tables:
-
-- AUTHOR:author_id, name, country
-- BOOK: book_id, title, price, author_id
-
-The author_id in the BOOK table is a foreign key that references AUTHOR.author_id. When an author is deleted, all their books are deleted automatically.
-
-Website Features
-
-- Register, log in, and log out.
-- View books with their author IDs.
-- View all authors.
-- Add and edit books.
-- Add and edit authors.
-- Delete books.
-- Delete authors and their books.
-- Upload book covers and author photos.
-
- Requirements
-
+ Technologies Used
 - Python
-- MySQL Server
 - Flask
+- MySQL
 - PyMySQL
+- HTML
+- CSS
 - bcrypt
-- python-dotenv
 
- How to Run the Project
-1. Create the Database
+ Features
+- User Registration and Login
+- User Logout
+- Password Hashing using bcrypt
+- Add, Edit, and Delete Books
+- Add, Edit, and Delete Authors
+- Upload Author and Book Images
+- Search Books
+- Book Catalogue using SQL JOIN
+- Loans Reports
+- Most Borrowed Books
+- Member with the Most Loans
+- Authors and Books Reports
 
-Run the SQL files from the project folder
+ Database
+The database is named library and contains the following tables:
+- Author
+- Publisher
+- Category
+- Book
+- Member
+- Loan
 
-The first file creates the database and tables. The second file inserts the test data, including at least 3 authors and 6 books.
 
- 2. Install the Required Packages
 
-Open the terminal inside the website folder and run:
+## How to Run
 
+1. Clone the repository:
+git clone YOUR_REPOSITORY_URL
+
+
+2. Install the required packages:
 pip install flask pymysql bcrypt python-dotenv
 
- 3. Configure the Environment
+3. Create the MySQL database and run the SQL scripts.
 
-Create an env file inside the website folder with the database connection settings:
+4. Configure the environment variables in your local environment file.
 
-SECRET_KEY=your_secret_key
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_NAME=registration
-DB_PORT=3306
+5. Run the Flask application:
 
-The registration database is used for user accounts, while the library database stores books and authors.
- 4. Run the Website
-
-From the website folder, run:
 python lab.py
-Open the website in your browser:
-http://127.0.0.1:5000
 
-Register an account or log in to access the library.
- Image Uploads
-The website supports uploading book covers and author photos. Images are saved in:
 
-static/uploads/
-Supported formats are PNG, JPG, JPEG, GIF, and WEBP.
+6. Open your browser and visit:
 
- Notes
+http://127.0.0.1:5000/
 
-- All registered users can access the same library.
-- The SQL scripts must be run before starting the website.
-- The env file contains private information and should not be uploaded to a public GitHub repository.
+
+## SQL Queries
+The file problem2_Queries.sql contains the SQL queries used for the new reports and pages.
+
